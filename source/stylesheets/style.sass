@@ -1,0 +1,58 @@
+@import compass
+@import compass/reset
+
+$v-black: #333333
+$v-blue:  #0044FF
+
+$helvetica: "helvetica neue", helvetica, arial, sans-serif
+$open-sans: "Open Sans", $helvetica
+
+
+$page-width: 960px
+$main-font: $open-sans
+
+$tablet: "screen and (max-width: #{$page-width})"
+
+=tablet
+  @media screen and (max-width: $page-width)
+    @content
+
+body
+  :background $v-blue
+  :font-family $main-font
+  :font-weight 300
+
+.content-wrapper
+  :width $page-width
+  :margin 0 auto
+
+#main-header
+  :background $v-black
+  +background(linear-gradient(lighten($v-black, 20), $v-black))
+  :color white
+
+  .content-wrapper
+    :padding 1em 0
+
+  nav
+    li
+      :display inline-block
+      :padding 0.5em
+      :background $v-blue
+      +border-radius(8px)
+      +transition(background 1s, padding 0.5s)
+
+      +tablet
+        :background red
+
+      &:hover
+        :background green
+        :padding 1em
+
+#main-footer
+  :background $v-black
+  :color white
+
+  .content-wrapper
+    :padding 1em 0
+    +box-shadow(red 1px 1px)

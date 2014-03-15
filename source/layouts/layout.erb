@@ -9,11 +9,34 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "The Middleman" %></title>
     
-    <%= stylesheet_link_tag "normalize", "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag  "all" %>
   </head>
   
   <body class="<%= page_classes %>">
-    <%= yield %>
+    <div id="wrapper">
+      <header id="main-header">
+        <div class="content-wrapper">
+          <nav>
+            <ul>
+              <li>Home</li>
+              <li>About us</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div="content">
+        <div class="content-wrapper">
+          <%= yield %>
+        </div>
+      </div>
+      <footer id="main-footer">
+        <div class="content-wrapper">
+          Copyright!
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
